@@ -1,0 +1,20 @@
+1. Landing page
+2. Footer
+3. Login
+4. Register
+5. Pantalla de mi cuenta, informe de estadistica 
+	1.Comprador (overview, estadisticas, billetera)
+	2.Vendedor (overview, estadistica, productos (Pantalla de edicion y crear), mensajeria, billetera (metodos de pago) )
+	3.Administrador (overview, estadistica full (productos, vendedores, compradores), 
+	  productos, control de billetera (vista), intermediario de envio y entrega (pago seguro), control de categorias
+
+6. Pantalla de productos en general
+7. Pantalla de producto individual (boton de dm, inputs de comentarios (admin: boton elim) y calificacion)(vendedor: estado del producto)
+8. Pantalla de carrito (historial de pedidos)
+9. Pantalla de facturacion (componentes por cada metodo de pago)
+10.Componente de categorias
+11.Recuperar cuenta
+12.Error 404
+13.Pantalla de mensajeria directa (Cliente y Vendedor)
+14.Pantalla de devoluciones y solicitud de cambios
+15.
