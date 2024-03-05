@@ -17,4 +17,4 @@
 12.Error 404
 13.Pantalla de mensajeria directa (Cliente y Vendedor)
 14.Pantalla de devoluciones y solicitud de cambios
-15.
+15.Pantalla de busqueda de productos
