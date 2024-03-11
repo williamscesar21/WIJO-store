@@ -62,6 +62,8 @@ Modelos de datos que necesitamos hasta ahora
     nombre de usuario que realizo la transaccion
     nombre de quien hizo la transaccion
 
-
+9. Categorias
+    nombre de la categoria
+    descripcion
 
     
