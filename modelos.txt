@@ -76,12 +76,12 @@ Descripción
 Conversación entre comprador y vendedor:
 
 Mensajes
-Relacionado con el producto/pedido
+id producto/pedido
 
 Conversación de soporte técnico:
 
 Mensajes
-Tipo de problema o consulta
+consulta
 
     
     
