@@ -1,78 +1,87 @@
-Modelos de datos que necesitamos hasta ahora
+Usuarios:
 
-1. Usuarios
-    Nombre
-    Apellido 
-    Correo
-    Rol
-      comprador
-      admin
-      vendedor
-        metodo_entrega
-    clave
+Nombre
+Apellido
+Cédula
+Dirección
+Correo
+Rol
+comprador
+admin
+vendedor
+Método de entrega
+Clave
 
-2. Producto
-    Nombre
-    Descripcion
-    marca
-    categoria
-    cantidad
-    precio
-      envio
-      iva
-      costo
-    vendedor(usuario vendedor de tabla usuarios)
-    estado del producto
-    calificacion
-    comentarios
-    imagen
-      imagen1
-      imagen2
-      
-3. Checkout 
-    metodo de envio
-    nombre del vendedor
-    nombre del comprador
-    nombre del producto
-    precio producto
-    fecha de compraventa
-    imagen1 del producto
-    id de operacion
-    comprobante de pago nro de operacion de billetera/nro de transferencia/nro de referencia
-    direccion de envio
-    nota extra
-    empresa de envio
-    
-4. Carrito
-    productos en el carrito
+Producto:
 
-5. Favoritos
-    productos en favoritos
+Nombre
+Descripción
+Marca
+Cantidad disponible
+Precio
+Envío
+IVA
+Costo
+Vendedor (usuario vendedor de la tabla usuarios)
+Estado del producto
+Calificación
+Imágenes (imagen1, imagen2, ...)
 
-6. Empresas de envio
-    nombre
-    rif
+Checkout:
 
-7. Billetera
-    nombre del usuario
-    transacciones
-    saldo
+Método de envío
+Nombre del vendedor
+Nombre del comprador
+Nombre del producto
+Precio del producto
+Fecha de compra/venta
+Imagen del producto
+ID de operación
+Comprobante de pago (número de operación de billetera/número de transferencia/número de referencia)
+Dirección de envío
+Nota extra
+Empresa de envío
 
-8. Transacciones
-    id
-    monto
-    nombre de usuario que realizo la transaccion
-    nombre de quien hizo la transaccion
+Carrito:
 
-9. Categorias
-    nombre de la categoria
-    descripcion
+Productos en el carrito
 
-10. Comentarios
-    nombre del usuario comentador
-    producto comentado
+Favoritos:
 
-11. Chat
+Productos en favoritos
+
+Empresas de envío:
+
+Nombre
+RIF
+
+Billetera:
+
+Nombre del usuario
+Transacciones
+Saldo
+
+Transacciones:
+
+ID
+Monto
+Nombre de usuario que realizó la transacción
+Nombre de quien hizo la transacción
+
+Categoría:
+
+Nombre
+Descripción
+
+Conversación entre comprador y vendedor:
+
+Mensajes
+Relacionado con el producto/pedido
+
+Conversación de soporte técnico:
+
+Mensajes
+Tipo de problema o consulta
 
     
     
