@@ -42,7 +42,7 @@ El proyecto está siendo desarrollado utilizando el stack MERN:
 
 Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto con nosotros:
 
-- Williams: [correo electrónico](mailto:williams@example.com)
-- Joaquín: [correo electrónico](mailto:joaquin@example.com)
+- Williams: [correo electrónico](mailto:williamscesar21@gmail.com)
+- Joaquín: [correo electrónico](mailto:)
 
 ¡Gracias por visitar WIJO Store! Esperamos que disfrutes de tu experiencia de compra en nuestra plataforma. 🛒🌟
