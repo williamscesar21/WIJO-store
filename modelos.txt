@@ -56,7 +56,11 @@ Modelos de datos que necesitamos hasta ahora
     transacciones
     saldo
 
-
+8. Transacciones
+    id
+    monto
+    nombre de usuario que realizo la transaccion
+    nombre de quien hizo la transaccion
 
 
 
