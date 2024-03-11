@@ -1,0 +1,63 @@
+Modelos de datos que necesitamos hasta ahora
+
+1. Usuarios
+    Nombre
+    Apellido 
+    Correo
+    Rol
+      comprador
+      admin
+      vendedor
+        metodo_entrega
+    clave
+
+2. Producto
+    Nombre
+    Descripcion
+    marca
+    cantidad
+    precio
+      envio
+      iva
+      costo
+    vendedor(usuario vendedor de tabla usuarios)
+    estado del producto
+    calificacion
+    imagen
+      imagen1
+      imagen2
+      
+3. Checkout 
+    metodo de envio
+    nombre del vendedor
+    nombre del comprador
+    nombre del producto
+    precio producto
+    fecha de compraventa
+    imagen1 del producto
+    id de operacion
+    comprobante de pago nro de operacion de billetera/nro de transferencia/nro de referencia
+    direccion de envio
+    nota extra
+    empresa de envio
+    
+4. Carrito
+    productos en el carrito
+
+5. Favoritos
+    productos en favoritos
+
+6. Empresas de envio
+    nombre
+    rif
+
+7. Billetera
+    nombre del usuario
+    transacciones
+    saldo
+
+
+
+
+
+    
