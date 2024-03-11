@@ -24,6 +24,7 @@ Modelos de datos que necesitamos hasta ahora
     vendedor(usuario vendedor de tabla usuarios)
     estado del producto
     calificacion
+    comentarios
     imagen
       imagen1
       imagen2
@@ -67,4 +68,11 @@ Modelos de datos que necesitamos hasta ahora
     nombre de la categoria
     descripcion
 
+10. Comentarios
+    nombre del usuario comentador
+    producto comentado
+
+11. Chat
+
+    
     
