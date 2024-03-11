@@ -1,0 +1,52 @@
+|-- controllers
+|   |-- AuthController.js
+|   |-- UserController.js
+|   |-- ProductController.js
+|   |-- CartController.js
+|   |-- CheckoutController.js
+|   |-- FavoriteController.js
+|   |-- ShippingController.js
+|   |-- WalletController.js
+|   |-- SupportController.js
+|   |-- RatingController.js
+|   |-- ConversationController.js
+|
+|-- models
+|   |-- User.js
+|   |-- Product.js
+|   |-- Checkout.js
+|   |-- Cart.js
+|   |-- Favorite.js
+|   |-- Shipping.js
+|   |-- Wallet.js
+|   |-- Transaction.js
+|   |-- Category.js
+|   |-- Conversation.js
+|   |-- Message.js
+|
+|-- routes
+|   |-- authRoutes.js
+|   |-- userRoutes.js
+|   |-- productRoutes.js
+|   |-- cartRoutes.js
+|   |-- checkoutRoutes.js
+|   |-- favoriteRoutes.js
+|   |-- shippingRoutes.js
+|   |-- walletRoutes.js
+|   |-- supportRoutes.js
+|   |-- ratingRoutes.js
+|   |-- conversationRoutes.js
+|
+|-- middleware
+|   |-- authentication.js
+|   |-- authorization.js
+|   |-- validation.js
+|   |-- errorHandling.js
+|   |-- logging.js
+|   |-- compression.js
+|   |-- cors.js
+|   |-- session.js
+|   |-- cache.js
+|   |-- security.js
+|   |-- httpSecurity.js
+
