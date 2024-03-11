@@ -15,6 +15,7 @@ Modelos de datos que necesitamos hasta ahora
     Nombre
     Descripcion
     marca
+    categoria
     cantidad
     precio
       envio
