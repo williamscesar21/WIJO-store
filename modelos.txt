@@ -5,6 +5,7 @@ Apellido
 Cédula
 Dirección
 Correo
+Telefono
 Rol
 comprador
 admin
