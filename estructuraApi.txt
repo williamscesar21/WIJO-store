@@ -50,3 +50,14 @@
 |   |-- security.js
 |   |-- httpSecurity.js
 
+
+
+
+NOTAS:
+COOKIES
+CACHE
+CONSIDERAR LO DEL CHAT
+MODULO DE METODO DE PAGO, VERIFICACION 
+
+
+
