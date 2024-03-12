@@ -1,5 +1,4 @@
 Usuarios:
-
 Nombre
 Apellido
 Cédula
@@ -12,9 +11,11 @@ admin
 vendedor
 Método de entrega
 Clave
+Suspendido (True, false)
+Eliminar (true, false)
+
 
 Producto:
-
 Nombre
 Descripción
 Marca
@@ -27,9 +28,10 @@ Vendedor (usuario vendedor de la tabla usuarios)
 Estado del producto
 Calificación
 Imágenes (imagen1, imagen2, ...)
+Eliminar (true, false)
+Categoria
 
 Checkout:
-
 Método de envío
 Nombre del vendedor
 Nombre del comprador
@@ -44,45 +46,57 @@ Nota extra
 Empresa de envío
 
 Carrito:
-
 Productos en el carrito
+Id_producto
+Id_usuario
+Cantidad_comprada
+Precio_dolares
+Método_pago
+Dirección
+
 
 Favoritos:
-
 Productos en favoritos
 
 Empresas de envío:
-
 Nombre
 RIF
 
 Billetera:
-
 Nombre del usuario
 Transacciones
 Saldo
 
 Transacciones:
-
 ID
 Monto
 Nombre de usuario que realizó la transacción
 Nombre de quien hizo la transacción
 
 Categoría:
-
 Nombre
 Descripción
 
 Conversación entre comprador y vendedor:
-
 Mensajes
 id producto/pedido
 
 Conversación de soporte técnico:
-
+Id_usuario
 Mensajes
 consulta
 
-    
-    
+Devoluciones:
+Id_producto
+Id_usuario
+Motivo
+Tipo (devuelve dinero, cambio de producto)
+Respuesta
+Fecha_devolución
+
+Reseñas (producto):
+Descripcion
+Valoración_producto (1,2,3,4,5)
+Respuesta
+Id_producto
+Id_usuario
