@@ -12,7 +12,7 @@ vendedor
 Método de entrega
 Clave
 Suspendido (True, false)
-Eliminar (true, false)
+Eliminar (true, false )
 
 
 Producto:
