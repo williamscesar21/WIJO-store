@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 // Definir modelo de datos para registrar usuarios
-const UserSchema = new Schema({
+const UsersSchema = new Schema({
     nombre:{
         type: String,
         minlenght: 1,
@@ -96,11 +96,11 @@ const UserSchema = new Schema({
     versionKey: false 
 })
 
-UserSchema.statics.encryptPassword = async (clave) => {// Función para encriptar la clave
+UsersSchema.statics.encryptPassword = async (clave) => {// Función para encriptar la clave
     const salt = await bcrypt.genSalt(10);
     return bcrypt.hash(clave, salt).then((hashedPassword)=>{
         return hashedPassword;
     })
 }
 
-module.exports = mongoose.model('Users', UserSchema); //Exportación del módulo usuario
+module.exports = mongoose.model('Users', UsersSchema); //Exportación del módulo usuario
