@@ -17,4 +17,4 @@ const categoriaSchema = new Schema({
     versionKey: false 
 })
 
-module.exports = mongoose.model('categoria', categoriaSchema); //Exportación del módulo categoria
+module.exports = mongoose.model('Categories', categoriaSchema); //Exportación del módulo categoria
