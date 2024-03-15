@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-
-// Definir modelo de datos para registrar productos
 const Schema = mongoose.Schema;
 const ProductSchema = new Schema({
     nombre:{
