@@ -84,7 +84,7 @@ const ProductSchema = new Schema({
         type: Boolean,
         require: true
     },
-    id_categoria:{
+    categoria:{
         type: String,
         require: true
     }
