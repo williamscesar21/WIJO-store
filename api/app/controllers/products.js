@@ -3,8 +3,25 @@ const CategoriesModel = require('../models/categories');
 
 //******** PRODUCTOS ****
 
-const obtenerproductos = (req, res)=>{
-    res.send('Ruta que obtiene productos')
+const obtenerproductos = (req, res)=>{ // Función para mostrar todos los productos
+    
+    try{
+        const productos = await Product.aggregate( // Añade los datos del vendedor del producto
+            [
+                {
+                    $lookup: { // Datos del vendedor del producto 
+                        from: 'users',
+                        localField: 'id_vendedor',
+                        foreignField: '_id',
+                        as: 'Datos Vendedor'
+                    }
+                }
+            ]
+        )
+        res.json({productos});
+    }catch(err){
+        res.status(500).json({message: err.message});
+    }
 }
 
 const crearProducto = async (req, res)=>{
@@ -34,18 +51,29 @@ const crearProducto = async (req, res)=>{
     }
 }
 const obtenerProductosId = async (req, res) => {
-    try{
+try{
         const id = req.params.id;
-        const prduct = await Product.findById(id);
-        if(!prduct){
-            res.status(404).json({message: 'Producto no encontrado'});
-        }else{
-            res.json(prduct);
+        let product = await Product.aggregate( // Función para agregar elementos de otras colecciones
+            [
+                {
+                    $match: {
+                        _id: new mongoose.Types.ObjectId(id) // Se filtra producto por ID
+                    }
+                },
+                {
+                    $lookup: { //Se agregan los datos del vendedor a la consulta de productos
+                        from: 'users',
+                        localField: 'id_vendedor',
+                        foreignField: '_id',
+                        as: 'Datos Vendedor'
+                    }
+                }
+          ]);
+          res.status(200).json({product});
         }
-    }catch(err){
-        res.status(500).json({message: "Error al obtener el producto"});
-        
-    }
+        catch(err){
+            res.status(500).json({message: err.message});
+        }
 })
 
 const actualizarProductoId = async (req, res) => {
