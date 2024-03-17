@@ -80,6 +80,8 @@ Descripción
 Conversación entre comprador y vendedor:
 Mensajes
 id producto/pedido
+Id_usuario_mensaje
+id_usuario_respuesta
 
 Conversación de soporte técnico:
 Id_usuario
