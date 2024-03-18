@@ -16,10 +16,10 @@ const obtenerproductos = (req, res)=>{ // Función para mostrar todos los produc
                         as: 'datos_vendedor'
                     },
                 {
-                    $unwind: "$datos_vendedor"
+                    $unwind: "$datos_vendedor" // Sirve para unir dos tablas (JOIN)
                 },
                 {
-                    $lookup: {
+                    $lookup: { // Otra coleccion
                         from: 'categorias',
                         localField: 'id_categoria',
                         foreignField: '_id',
@@ -78,10 +78,10 @@ try{
                         as: 'datos_vendedor'
                     },
                 {
-                    $unwind: "$datos_vendedor"
+                    $unwind: "$datos_vendedor" // Unión de colecciones
                 },
                 {
-                    $lookup: {
+                    $lookup: { // Coleccion categorias para obtener sus datos
                         from: 'categorias',
                         localField: 'id_categoria',
                         foreignField: '_id',
