@@ -75,7 +75,17 @@ try{
                         from: 'users',
                         localField: 'id_vendedor',
                         foreignField: '_id',
-                        as: 'Datos Vendedor'
+                        as: 'datos_vendedor'
+                    },
+                {
+                    $unwind: "$datos_vendedor"
+                },
+                {
+                    $lookup: {
+                        from: 'categorias',
+                        localField: 'id_categoria',
+                        foreignField: '_id',
+                        as: 'datos_categoria'
                     }
                 }
           ]);
