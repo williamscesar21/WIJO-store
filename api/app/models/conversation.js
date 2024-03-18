@@ -28,4 +28,22 @@ const conversacionEnvioSchema = new Schema({
     versionKey: false 
 })
 
+//Definir el modelo donde se le responde al comprador por parte del vendedor
+const conversacionRespuestaSchema = new Schema({
+    respuesta: {// Mensaje en forma de respuesta que envía el vendedor al comprador
+        type: String,
+        require: true
+    },
+    id_conversacionEnvio: { // Id de la colección "conversacionEnvioSchema"
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'ConversacionEnvio',
+        require: true
+    }
+},{
+    timestamps: true,
+    versionKey: false 
+})
+
 module.exports = mongoose.model('ConversacionEnvio', ConversacionEnvioSchema); //Exportación del módulo Conversación Envío 
+module.exports = mongoose.model('ConversacionRespuesta', ConversacionRespuestaSchema); //Exportación del módulo Conversación Respuesta 
+
