@@ -1,18 +1,18 @@
 const UsersModel = require('../models/conversation');
 
-const crearConversacionEnvio = async (req, res) => {
+const crearComentarioEnvio = async (req, res) => {
     try{
-        const message = new ConversacionEnvio(req.body);
+        const message = new ComentarioEnvio(req.body);
         await message.save();
         res.status(201).json(message);
     }catch(err){
         res.status(400).json({message: err.message});
     }
-})
+}
 
-const obtenerConversacionEnvio =  async (req, res) => {
+const obtenerComentarioEnvio =  async (req, res) => {
     try {
-        const messages = await ConversacionEnvio.aggregate(
+        const messages = await ComentarioEnvio.aggregate(
             [
                 {
                     $lookup: {
@@ -52,12 +52,12 @@ const obtenerConversacionEnvio =  async (req, res) => {
     catch(err){
         res.status(500).json({message: err.message});
     }
-})
+}
 
-const obtenerConversacionEnvioId = async (req, res) => {
+const obtenerComentarioEnvioId = async (req, res) => {
     try {
         const id = req.params.id;
-        let messages = await ConversacionEnvio.aggregate(
+        let messages = await ComentarioEnvio.aggregate(
             [
                 {
                     $match: {
@@ -102,23 +102,23 @@ const obtenerConversacionEnvioId = async (req, res) => {
     catch(err){
         res.status(500).json({message: err.message});
     }
-})
+}
 
 
-const crearConversacionRespuesta = async (req, res) => {
+const crearComentarioRespuesta = async (req, res) => {
     try{
-        const answer = new ConversacionRespuesta(req.body);
+        const answer = new ComentarioRespuesta(req.body);
         await answer.save();
         res.status(201).json(answer);
     }catch(err){
         res.status(400).json({message: err.message});
     }
     
-})
+}
 
-const obtenerConversacionRespuesta = async (req, res) => {
+const obtenerComentarioRespuesta = async (req, res) => {
     try {
-        const answers = await ConversacionRespuesta.aggregate(
+        const answers = await ComentarioRespuesta.aggregate(
             [
                 {
                     $lookup: {
@@ -168,12 +168,12 @@ const obtenerConversacionRespuesta = async (req, res) => {
     catch(err){
         res.status(500).json({message: err.message});
     }
-})
+}
 
-const obtenerConversacionRespuestaId = async (req, res) => {
+const obtenerComentarioRespuestaId = async (req, res) => {
     try {
         const id = req.params.id;
-        const answers = await ConversacionRespuesta.aggregate(
+        const answers = await ComentarioRespuesta.aggregate(
             [
                 {
                     $match: {
@@ -228,6 +228,6 @@ const obtenerConversacionRespuestaId = async (req, res) => {
     catch(err){
         res.status(500).json({message: err.message});
     }
-})
+}
 
-module.exports = { crearConversacionEnvio, obtenerConversacionEnvio, obtenerConversacionEnvioId, crearConversacionRespuesta, obtenerConversacionRespuesta, obtenerConversacionRespuestaId }
+module.exports = { obtenerComentarioRespuestaId, obtenerComentarioRespuesta,  crearComentarioRespuesta, obtenerComentarioEnvioId, obtenerComentarioEnvio, crearComentarioEnvio}
