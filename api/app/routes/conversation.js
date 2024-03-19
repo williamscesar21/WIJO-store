@@ -3,13 +3,13 @@ const router = express.Router();
 
 const {} = require('../controllers/conversation');
 
-router.post('/',crearConversacionEnvio);
-router.post('/',crearConversacionRespuesta);
+router.post('/',crearComentarioEnvio);
+router.post('/',crearComentarioRespuesta);
 
-router.get('/', obtenerConversacionEnvio);
-router.get('/', obtenerConversacionRespuesta);
+router.get('/', obtenerComentarioEnvio);
+router.get('/', obtenerComentarioRespuesta);
 
-router.get('/id', obtenerConversacionEnvioId);
-router.get('/id', obtenerConversacionRespuestaId);
+router.get('/id', obtenerComentarioEnvioId);
+router.get('/id', obtenerComentarioRespuestaId);
 
 module.exports = router;
