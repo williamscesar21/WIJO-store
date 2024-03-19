@@ -10,11 +10,10 @@ const WalletSchema = new mongoose.Schema({
     balance: {
         type: Number,
         default: 0
-    },
-    created_at: {
-        type: Date,
-        default: Date.now
     }
+},{
+    timestamps: true,
+    versionKey: false
 })
 
 module.exports = mongoose.model('wallet', WalletSchema)

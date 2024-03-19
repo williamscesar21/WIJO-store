@@ -1,8 +1,15 @@
-const express = require('express')
-const router = express.Router()
-const Wallet = require('../../app/controllers/wallet')
+const express = require('express');
+const router = express.Router();
+const verificarReferencia = require('../middlewares/verificarReferencia');
+const { obtenerSaldo, recargarSaldo, transferirSaldo } = require('../controllers/wallet');
 
-router.get('/user/:owner/saldo', Wallet.obtenerSaldo)
-router.post('/user/:owner/recargar', Wallet.recargarSaldo)
+// Ruta para obtener el saldo de la billetera de un usuario
+router.get('/:userId/saldo', obtenerSaldo);
 
-module.exports = router
+// Ruta para recargar el saldo de la billetera de un usuario
+router.put('/:userId/recargar', verificarReferencia ,recargarSaldo);
+
+// Ruta para transferir el saldo de la billetera de un usuario
+router.post('/transferir', transferirSaldo);
+
+module.exports = router;

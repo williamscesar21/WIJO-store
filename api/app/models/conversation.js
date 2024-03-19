@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 //Definir modelo para registrar los mensajes que envía el comprador al vendedor
 const conversacionEnvioSchema = new Schema({
