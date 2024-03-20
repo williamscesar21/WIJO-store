@@ -1,4 +1,4 @@
-const UsersModel = require('../models/conversation');
+const UsersModel = require('../models/comentario');
 
 const crearComentarioEnvio = async (req, res) => {
     try{
