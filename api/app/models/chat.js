@@ -1,6 +1,7 @@
-/*const mongoose = require('mongoose');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const mensajeSchema = new mongoose.Schema({
+const chatSchema = new mongoose.Schema({
     id_usuario: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
@@ -34,10 +35,12 @@ const conversacionSchema = new mongoose.Schema({
         ref: 'Product',
         required: true
     },
-    mensajes: [mensajeSchema] // Matriz de mensajes
+    mensajes: [chatSchema] // Matriz de chat
 }, {
     timestamps: true,
     versionKey: false
 });
 
-module.exports = mongoose.model('Conversacion', conversacionSchema);*/
+module.exports = mongoose.model('Conversacion', ConversacionSchema);
+module.exports = mongoose.model('Chat', ChatSchema);
+
