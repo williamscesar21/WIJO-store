@@ -1,6 +1,12 @@
 require('dotenv').config(); //npm i dotenv
 const nodemailer = require('nodemailer'); // npm i nodemailer
 
+//También hay que instalar:
+//npm i ejs
+//npm i express
+//npm ibody-parser
+//npm i node-cron
+
 // Configurar el correo electrónico
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -16,7 +22,7 @@ const transporter = nodemailer.createTransport({
 });
 
 
-module.exports = function(cualNotificacion, nombre, email, mensaje){
+module.exports = function(cualNotificacion, nombre, apellido, cedula, correo, telefono, roles, createdAt ){
 
     // Notificaciones
     // 0. Notificación de formulario de contacto - administrador.
@@ -36,8 +42,8 @@ module.exports = function(cualNotificacion, nombre, email, mensaje){
             
         },
         {// Mensaje al usuario registrado
-            subject: "Hemos recibido tu mensaje",
-            titulo : "Pronto estaremos contigo",
+            subject: "Hemos recibido tu registro",
+            titulo : "Mensaje de registro",
             notificacion: "Hola" + nombre + " " + apellido ".",
             notificacion2: "Te ha registrado con el rol de " + roles + ".",
             notificacion3: "Te informamos que hemos recibido tu registro satisfactoriamente.",
