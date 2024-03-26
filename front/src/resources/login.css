@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #8ac1ff;
+}
+
+.form-container{
+    position: relative;
+    width: 60%;
+    display: flex;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    background-color: #FFFFFF;
+    padding: 5%;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.title-container{
+        border-radius: 20px 20px 0px 0px;
+        height: fit-content;
+        min-height: 50px;
+        width: 60%;
+        background: #091233;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 4vw;
+        color: #FFFFFF;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 1%;
+}
+
+.toggle-password{
+    background-color: transparent;
+    border: none;
+    font-size: 150%;
+    align-content: center;
+    vertical-align: middle;
+}
+
+.login-button{
+    background-color: #18A82F;
+    height: fit-content;
+    width: 60%;
+    border-radius: 20px;
+    color: #000000;
+    border: none;
+    padding: 1%;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 100%;
+}
+
+label{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    /*font size responsive*/
+    font-size: 1.25em;
+    margin-top: 50%;
+}
+
+input{
+    border-radius: 20px;
+    background-color: #D8ECFA;
+    width: 80%;
+    border: none;
+    padding: 3%;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 100%;
+    margin: 2%;
+
+}
+
+h2{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 150%;
+    margin-bottom: 5%;
+}
+
+.links-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5%;
+    margin-top: 5%;
+}
+
+a{
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 100%;
+
+}
