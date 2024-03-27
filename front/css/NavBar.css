@@ -1,0 +1,304 @@
+.navbar{
+    background-color: #2AA0E9;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sb__navbar-logo-div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 100px;
+    margin-top: 10px;
+
+
+}
+
+/*****MENU LATERAL *****/
+.sb__navbar-menu-lateral{
+    background-color: #2AA0E9;
+    width: 100%;
+    height: 550px;
+    position: fixed;
+    top: 130px;
+    left: 0;
+    display: none;
+
+}
+
+.sb__navbar-menu-lateral ul{
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    left: 0;
+    gap: 20px;   
+    padding: 10px 20px;
+
+}
+
+#menu-lateral {
+    display: none;
+  }
+
+  #menu-lateral:checked ~ .sb__navbar-menu-lateral {
+    display: flex;
+    z-index: 100;
+  }
+
+  #menu-lateral:checked ~ .img-carrito {
+    visibility: hidden;
+    display: none;
+
+  }
+  #menu-lateral:checked ~ .img-usuario {
+    visibility: hidden;
+    display: none;
+
+  }
+
+  #menu-lateral:checked ~ .img-usuario {
+    visibility: hidden;
+    display: none;
+
+  }
+
+  #menu-lateral:checked ~ .sb__navbar-search-contenedor{
+    width: 70%;
+
+}
+
+  .sb__navbar-menu-mobile a{
+    display: flex;
+    gap: 10px;
+    left: 0;
+  }
+  .sb__navbar-menu-mobile a img{
+     left: 0;
+  }
+
+  
+
+ /**********************************/
+
+.sb__navbar-search-div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem 1rem;
+
+}
+
+
+.sb__navbar-search-div img{
+    width: 30px;
+    height: 30px;
+}
+
+.sb__navbar-search-contenedor{
+    background-color: white;
+    width: 52%;
+    height: 30px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+
+ 
+}
+.sb__navbar-search-contenedor input{
+    border-radius: 40px;
+    border: 0px;
+    padding-left: 10px;
+    margin-left: 10px;
+    width: 100%;
+    outline: none;
+
+}
+
+.sb__navbar-search-contenedor img.img-lupa{
+    width: 20px;
+    height: 20px;
+    margin-right: 15px; 
+
+}
+.hr-navbar{
+    border: 2px solid white;
+}
+
+
+@media screen and (min-width: 1236px) {
+
+    .navbar{
+        background-color: white;
+    }
+
+    .img-logo{
+        visibility: visible;
+        display: flex;
+        width: 100%;
+    }
+
+    .sb__navbar-search-div{
+        gap: 10px;
+    }
+    .sb__navbar-search-div img.img-logo{
+        width: 199px;
+        height: 48px;
+     }
+
+    .sb__navbar-search-contenedor{
+        width: 300px;
+        background-color: #D8ECFA;
+    }
+
+    .sb__navbar-search-div img{
+        width: 30px;
+        height: 30px;
+
+    }
+   
+    .sb__navbar-search-contenedor input{
+        width: 200px;
+        background-color: #D8ECFA;
+        border: 0;
+        outline: none;
+
+    }
+    .sb__navbar-search-contenedor img{
+        width: 30px;
+        height: 30px;
+    }
+  
+
+
+    .img-logo-wijo{
+        visibility: hidden;
+        display: none;
+    }
+    .img-logo-store{
+        visibility: hidden;
+        display: none;
+    }
+
+
+    .sb__navbar-menu-escritorio{
+        visibility: visible;
+        display: flex;
+        gap: 20px;
+
+    }
+
+    .sb__navbar-menu-escritorio a li{
+        color: black;
+        
+    }
+    .sb__navbar-menu-escritorio a li:hover{
+        color: #F5E895;
+          
+    }
+    
+    .img-menu{
+        visibility: hidden;
+        display: none;
+    }
+
+    
+}
+
+
+.linea_navbar{
+    margin:0px 20px;
+    width: 220%;    
+    border-top:1px solid white;
+    /*position: relative;*/
+    /*top:10px;*/
+    float: left;
+}
+
+@media screen and (min-width: 1000px) {
+
+    .navbar{
+        background-color: white;
+    }
+
+    .img-logo{
+        visibility: visible;
+        display: flex;
+        width: 100%;
+    }
+
+    .sb__navbar-search-div{
+        gap: 10px;
+    }
+    .sb__navbar-search-div img.img-logo{
+        width: 199px;
+        height: 48px;
+     }
+
+    .sb__navbar-search-contenedor{
+        width: 300px;
+        background-color: #D8ECFA;
+    }
+
+    .sb__navbar-search-div img{
+        width: 30px;
+        height: 30px;
+
+    }
+   
+    .sb__navbar-search-contenedor input{
+        width: 200px;
+        background-color: #D8ECFA;
+        border: 0;
+        outline: none;
+
+    }
+    .sb__navbar-search-contenedor img{
+        width: 30px;
+        height: 30px;
+    }
+  
+
+
+    .img-logo-wijo{
+        visibility: hidden;
+        display: none;
+    }
+    .img-logo-store{
+        visibility: hidden;
+        display: none;
+    }
+
+
+    .sb__navbar-menu-escritorio{
+        visibility: visible;
+        display: flex;
+        gap: 20px;
+
+    }
+
+    .sb__navbar-menu-escritorio a li{
+        color: black;
+        
+    }
+    .sb__navbar-menu-escritorio a li:hover{
+        color: #F5E895;
+          
+    }
+
+     
+    .img-menu{
+        visibility: hidden;
+        display: none;
+    }
+
+    .sb__navbar-menu-lateral{
+        visibility: hidden;
+        display: none;
+    }
+
+    
+}
