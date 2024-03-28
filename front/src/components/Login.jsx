@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { AiOutlineUser, AiOutlineLock, AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'; // Importar los íconos de React Icons
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import '../resources/login.css'; // Importar el archivo CSS
+import '../resources/login.css'; 
 
 const Login = ({ setToken }) => {
     const [correo, setCorreo] = useState('');
