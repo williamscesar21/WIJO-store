@@ -1,17 +1,21 @@
 const express = require('express');
 const router = express.Router();
+const productController = require('../controllers/products');
+const path = require('path');
 
-const {obtenerproductos, crearProducto, obtenerProductosId, actualizarProductosId, crearCategoria, obtenerCategorias, obtenerCategoriaId, actualizarCategoriaId } = require('../controllers/products');
+const uploadsDirectory = path.join(__dirname, 'app', 'uploads');
 
-router.post('/', crearProducto);
-router.get('/', obtenerproductos);
-router.get('/id', obtenerProductosId);
-router.patch('/id', actualizarProductosId);
+// Rutas para los productos
+router.get('/', productController.obtenerProductos);
+router.get('/:id', productController.verProductoPorId);
+router.post('/', productController.crearProducto);
+router.put('/:id', productController.actualizarProductoPorId);
+router.delete('/:id', productController.eliminarProductoPorId);
 
-router.post('/', crearCategoria);
-router.get('/', obtenerCategorias);
-router.get('/id', obtenerCategoriaId);
-router.patch('/id', actualizarCategoriaId);
+// Ruta para buscar productos por palabra clave en el nombre
+router.get('/buscar/:palabraClave', productController.buscarProductosPorPalabraClave);
 
+// Ruta para servir imágenes estáticas desde la carpeta de uploads
+router.use('/uploads', express.static('../back/api/app/uploads'));
 
 module.exports = router;

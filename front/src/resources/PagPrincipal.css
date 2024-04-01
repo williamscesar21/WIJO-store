@@ -1,0 +1,21 @@
+.pag-principal-container {
+    background-color: #2AA0E9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;
+}
+
+.titulo {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.contenido {
+    margin-bottom: 20px;
+}
+
+.lista-productos {
+    margin-left: 20px;
+}
+

@@ -1,0 +1,116 @@
+/* Estilo básico para el componente ProductList */
+
+/* Contenedor principal */
+.product-list-container {
+    width: 100%;
+    margin-right: 2vw;
+    overflow-x: auto; /* Utiliza el desplazamiento horizontal automático */
+    white-space: nowrap; /* Evita el salto de línea */
+}
+
+/* Estilo para la barra de desplazamiento en navegadores webkit */
+.product-list-container::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento */
+}
+
+.product-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan en múltiples líneas */
+    justify-content: center;
+}
+
+/* Estilo para cada producto */
+.product-item {
+    width: calc(33.33% - 20px); /* Ajusta el tamaño de los elementos */
+    max-width: 250px;
+    min-width: 150px;
+    margin-bottom: 20px;
+    margin-right: 20px; 
+    background-color: #CDCDCD;
+    border: 1px solid #ccc;
+    align-content: center;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+}
+
+.product-details {
+    padding: 10px;
+}
+
+.product-description {
+    margin-top: 5px;
+    font-size: 160%;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    text-overflow: ellipsis; /* Muestra "..." cuando el texto se corta */
+    font-weight: 700;
+}
+
+/* Nombre del producto */
+.product-name {
+    font-size: 100%;
+    font-weight: bold;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    text-overflow: ellipsis; /* Muestra "..." cuando el texto se corta */
+}
+
+.product-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imagen individual */
+.product-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+}
+
+.product-vendedor {
+    width: 100%;
+    margin-top: 2vh;
+    font-size: 90%;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    text-overflow: ellipsis; /* Muestra "..." cuando el texto se corta */
+    white-space: nowrap; /* Evita el salto de línea */
+}
+
+.cart-button {
+    display: none;
+    height: fit-content;
+    background-color: transparent;
+    border: none;
+    padding: 3%;
+    position: absolute;
+    cursor: pointer;
+    top: 10px; 
+    right: 10px; 
+}
+
+.product-item:hover .cart-button {
+    display: block;
+}
+
+.carrito {
+    width: 2vw;
+    height: 2vw;
+}
+.small-text {
+    font-size: 70%; /* Ajusta el tamaño del texto según tus preferencias */
+}
+
+.load-more-button {
+    position: relative;
+    background-color: #083b72; /* Color de fondo del botón */
+    color: #ffffff; /* Color del texto */
+    border: none; /* Quita el borde */
+    padding: 10px 20px; /* Ajusta según tu preferencia */
+    cursor: pointer;
+    font-size: 16px; /* Tamaño del texto */
+}
+
+.load-more-button:hover {
+    background-color: #0056b3; /* Color de fondo del botón al pasar el cursor */
+}

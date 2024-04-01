@@ -1,5 +1,5 @@
 const CartItem = require('../models/cart');
-const Product = require('../models/products'); // Cambiado de 'products' a 'product'
+const Product = require('../models/products'); 
 
 const agregarProductoAlCarrito = async (req, res) => {
     try {
@@ -12,7 +12,7 @@ const agregarProductoAlCarrito = async (req, res) => {
         }
 
         // Calcular el precio del producto
-        const price = product.precio; // Asumiendo que 'precio' es el nombre del campo en el modelo de Producto
+        const price = product.precio;
 
         // Buscar el carrito del usuario
         let cart = await CartItem.findOne({ user: userId });

@@ -62,6 +62,11 @@ const ProductSchema = new Schema({
         type: String,
         required: true
     },
+    nombre_vendedor:{
+        type: String,
+        required: true
+    }
+    ,
     estado_producto:{
         type: String,
         required: true
@@ -71,10 +76,12 @@ const ProductSchema = new Schema({
         required: true,
         default: 0
     },
-    images:{
-        data: Buffer,
-        contentType: String
-    },
+    images: [
+        {
+            fileName: String,
+            contentType: String
+        }
+    ],
     eliminar:{
         type: Boolean,
         default: false,
