@@ -106,11 +106,13 @@ const NavBar = () => {
                 </ul>
                 <img className="img-carrito" src="src\assets\icons\carrito.png" alt="" />
                 <img className="img-usuario" src="src\assets\icons\usuario.png" alt="" />
-            </div> 
+            </div>          
         </nav>
       
        
     )
 }
+
+
 
 export default NavBar;
