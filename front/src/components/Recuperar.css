@@ -1,0 +1,130 @@
+
+.sb__recuperar{
+    position: relative;
+    top: 220px;
+    height: 75vh;
+}
+.sb__recuperar div.sb__recuperar-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #091233;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 150px;
+    width: 90%;
+    height: 30vh;
+    border-radius: 40px 40px 0px 0px ;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+
+.sb__recuperar div.sb__recuperar-div2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    height: 40vh;
+    border-radius: 0px 0px 40px 40px;
+    gap:50px;
+}
+
+.sb__recuperar div.sb__recuperar-div2 h1.sb__recuperar-titulo{
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: 0.5rem;
+}
+
+.sb__recuperar div.sb__recuperar-div2 form.sb__recuperar-form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    width: 60%;
+}
+
+.label-usuario { grid-area: 1 / 1 / 2 / 3; }
+.input-usuario { grid-area: 2 / 1 / 3 / 3; }
+.sb__recuperar-button { grid-area: 3 / 1 / 4 / 3; }
+
+.sb__recuperar div.sb__recuperar-div2 form.sb__recuperar-form img{
+    width: 30px;
+    height: 30px;
+}
+
+.sb__recuperar div.sb__recuperar-div2 form.sb__recuperar-form label.label-usuario{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 24px;
+    gap:10px;
+}
+
+.sb__recuperar div.sb__recuperar-div2 form.sb__recuperar-form input.input-usuario{
+    border-radius: 20px;
+    background-color: #D8ECFA;
+    width: 100%;
+    border: 0;
+    padding-left: 25px;
+   
+}
+
+.sb__recuperar div.sb__recuperar-div2 form.sb__recuperar-form input.input-usuario::placeholder{
+    color: rgba(0, 0, 0, 0.32);
+    font-weight: bolder;
+    font-size: 18px;
+   
+}
+
+
+.sb__recuperar div.sb__recuperar-div2 form.sb__recuperar-form button.sb__recuperar-button{
+    border-radius: 20px;
+    background-color: #18A82F;
+    width: 100%;
+    border: 0;
+    font-weight: bolder;
+    font-size: 16px;
+   
+}
+
+
+@media screen and (min-width: 675px) {
+
+    .sb__recuperar{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        top: 130px;
+        
+    }
+
+
+    .sb__recuperar div.sb__recuperar-div{
+        width: 20%;
+        height: 350px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 120px;
+        border-radius: 0px 40px 40px 0px;        
+    }
+
+    .sb__recuperar div.sb__recuperar-div2{
+        width: 40%;
+        height: 350px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 120px;
+        border-radius: 40px 0px 0px 40px;
+        border-top: 2px solid black;        
+    }    
+}
