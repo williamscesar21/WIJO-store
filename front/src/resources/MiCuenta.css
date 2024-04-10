@@ -1,0 +1,369 @@
+.miCuenta{
+    width: 100%;
+    height: 95vh;
+    background-color: #2AAEFF;
+    padding-top: 10px; 
+    position: relative;
+    top:200px;
+
+   
+
+}
+
+.miCuenta div.miCuenta-div{
+    width: 95%;
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: white;
+    margin-top: 140px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-radius: 30px;
+    
+}
+
+.usuario { grid-area: 1 / 1 / 4 / 2; }
+.productos { grid-area: 1 / 2 / 3 / 3; }
+.historial { grid-area: 1 / 3 / 3 / 4; }
+.cerrar-sesion { grid-area: 3 / 2 / 4 / 4; }
+
+.miCuenta div.miCuenta-div ul.usuario li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+    font-weight: bolder;
+
+}
+
+.miCuenta div.miCuenta-div ul{
+    margin-top: 20px;
+}
+
+.miCuenta div.miCuenta-div ul.usuario li img{
+    width: 80px;
+    height: 80px;
+
+}
+
+.miCuenta div.miCuenta-div ul.cerrar-sesion li p{
+    display: none;
+
+}
+
+.miCuenta div.miCuenta-div ul.cerrar-sesion li img{
+    width: 30px;
+    height: 30px;
+
+}
+
+.miCuenta div.miCuenta-div ul.historial li img.img-advertencia{
+    width: 35px;
+    height: 35px;
+}
+
+
+.miCuenta div.miCuenta-div ul.cerrar-sesion li img{
+
+    margin-left: 20% ;
+    margin-top: 5px;
+    background-color: #FF5555;
+    border-radius: 100%;
+    padding: 4px;
+    
+}
+
+.miCuenta div.miCuenta-div ul.productos li{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 12px;
+    line-height: 22px;
+    
+}
+
+.miCuenta div.miCuenta-div ul.historial li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 22px;
+    font-weight: bolder;
+    
+}
+
+
+.miCuenta div.miCuenta-div ul.historial li img{
+
+    margin-top: 13px;
+  
+    
+}
+
+.miCuenta div.miCuenta-div ul.historial li img{
+
+    margin-top: 13px;
+  
+    
+}
+
+
+
+
+
+
+
+/***********************/
+
+
+.miCuenta div.miCuenta-div-medio-superior ul{
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-radius: 30px 30px 0px 0px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    padding: 11px;
+}
+
+.miCuenta div.miCuenta-div-medio-medio{
+
+    width: 95%;
+    height: 50vh;
+
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0px 0px; 
+ 
+
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-radius: 0 0 30px 30px;
+
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white; 
+    
+ 
+}
+
+.ul-izquierdo { grid-area: 1 / 1 / 2 / 2; }
+.ul-derecho { grid-area: 1 / 2 / 2 / 3; }
+.ul.inferior { grid-area: 2 / 1 / 3 / 3; }
+.boton-guardar { grid-area: 3 / 1 / 4 / 3; }
+
+
+
+.miCuenta div.miCuenta-div-medio-medio ul li img{
+    width: 30px;
+    height: 30px;
+}
+
+.miCuenta div.miCuenta-div-medio-medio ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 40px;
+    font-weight: bolder;
+
+}
+
+.miCuenta div.miCuenta-div-medio-medio ul li input{
+    width: 100%;
+    height: 30px;
+    border-radius: 50px;
+    border: 0;
+    background-color: #D8ECFA;
+    padding-left: 15px;
+    
+    transition: .3s ease;
+}
+
+.miCuenta div.miCuenta-div-medio-medio ul li input:focus {
+	background: #F2F2F2;
+	border: 0px solid #5A7EC7;
+	border-radius: 10px;
+}
+
+
+.miCuenta div.miCuenta-div-medio-medio ul.ul-izquierdo{
+    margin-top: 30px;
+    margin-left: 8%;
+    margin-right: 8%;    
+}
+
+.miCuenta div.miCuenta-div-medio-medio ul.ul-izquierdo li p{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 5px
+}
+
+.miCuenta div.miCuenta-div-medio-medio ul.ul-derecho{
+    margin-top: 30px;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.miCuenta div.miCuenta-div-medio-medio ul.ul-derecho li p{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 5px
+}
+
+
+
+.miCuenta div.miCuenta-div-medio-medio ul.ul-inferior{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: baseline;
+    font-weight: bolder; 
+    margin-top: 10px;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+
+
+.miCuenta div.miCuenta-div-medio-medio ul.boton-guardar li button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:  #18A82F;
+    color: black;
+    border-radius: 20px;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    border: 0px;
+}
+
+
+.miCuenta div.miCuenta-div-medio-medio ul.ul-inferior li p{
+
+    width: 85vw;
+    height: 120px;
+    border-radius: 20px;
+    background-color: #D8ECFA;
+    line-height: 19px;
+    padding: 10px;
+   
+}
+
+
+
+/*************** RESPONSIVE **************/
+
+
+@media screen and (min-width: 1000px) {
+
+    .miCuenta{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .miCuenta div.miCuenta-div{
+        margin-top: 40px;
+        background-color: white;
+        width: 400px;
+        height: 80vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+
+    .usuario { grid-area: 1 / 1 / 2 / 3; }
+    .productos { grid-area: 2 / 1 / 3 / 2; }
+    .historial { grid-area: 2 / 2 / 3 / 3; }
+    .cerrar-sesion { grid-area: 3 / 1 / 4 / 3; }
+
+
+    .miCuenta div.miCuenta-div ul.productos{
+        margin-left: 60px;
+    }
+
+    .miCuenta div.miCuenta-div ul.cerrar-sesion{
+
+        margin-left: 30%;
+        padding: 0px;
+        border-radius: 15px;        
+        
+        width: 150px;
+        height: 50px;
+        background-color: #FF5555;
+    }
+
+    
+    .miCuenta div.miCuenta-div ul.cerrar-sesion li p{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: bolder;
+
+    }
+
+    .miCuenta div.miCuenta-div ul.cerrar-sesion li img.img-cerrar-sesion{
+        display: none;
+    
+    }
+
+    .miCuenta div.miCuenta-div ul.cerrar-sesion li p img{
+
+        margin: 0px;
+        background-color: #FF5555;
+       
+
+    }
+ 
+ 
+
+
+    .miCuenta div.miCuenta-div-medio-medio{
+        margin: 0;
+        padding: 0;
+        height: 70vh;
+        background-color: #57CDFF;
+        width: 150%;
+    }
+
+    .miCuenta div.miCuenta-div-medio-superior ul{
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        background-color: #57CDFF;  
+        margin-top: 40px;
+        height: 10vh;
+        width: 150%;
+        
+    }
+}
