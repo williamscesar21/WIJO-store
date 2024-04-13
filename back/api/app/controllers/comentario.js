@@ -1,233 +1,85 @@
-const UsersModel = require('../models/comentario');
+const ComentarioEnvio = require('../models/comentario').ComentarioEnvio;
+const ComentarioRespuesta = require('../models/comentario').ComentarioRespuesta;
 
-const crearComentarioEnvio = async (req, res) => {
-    try{
-        const message = new ComentarioEnvio(req.body);
-        await message.save();
-        res.status(201).json(message);
-    }catch(err){
-        res.status(400).json({message: err.message});
-    }
-}
-
-const obtenerComentarioEnvio =  async (req, res) => {
+// Controlador para crear un comentario de envío
+async function crearComentarioEnvio(req, res) {
     try {
-        const messages = await ComentarioEnvio.aggregate(
-            [
-                {
-                    $lookup: {
-                        from: 'users',
-                        localField: 'id_usuario_mensaje',
-                        foreignField: '_id',
-                        as: 'datos_usuario_mensaje'
-                    }
-                },
-                {
-                    $unwind: "$datos_usuario_mensaje"
-                },
-                {
-                    $lookup: {
-                        from: 'users',
-                        localField: 'id_usuario_vendedor',
-                        foreignField: '_id',
-                        as: 'datos_usuario_vendedor'
-                    }
-                },
-                {
-                    $unwind: "$datos_usuario_vendedor"
-                },
-                {
-                    $lookup: {
-                        from: 'products',
-                        localField: 'id_producto',
-                        foreignField: '_id',
-                        as: 'datos_producto'
-                    }
-                }
-            ]
-        )
-        res.json(messages);
-
-    }
-    catch(err){
-        res.status(500).json({message: err.message});
+        const comentario = await ComentarioEnvio.create(req.body);
+        res.status(201).json(comentario);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
     }
 }
 
-const obtenerComentarioEnvioId = async (req, res) => {
+// Controlador para crear un comentario de respuesta
+async function crearComentarioRespuesta(req, res) {
     try {
-        const id = req.params.id;
-        let messages = await ComentarioEnvio.aggregate(
-            [
-                {
-                    $match: {
-                        _id: new mongoose.Types.ObjectId(id)
-                    }
-                },
-                {
-                    $lookup: {
-                        from: 'users',
-                        localField: 'id_usuario_mensaje',
-                        foreignField: '_id',
-                        as: 'datos_usuario_mensaje'
-                    }
-                },
-                {
-                    $unwind: "$datos_usuario_mensaje"
-                },
-                {
-                    $lookup: {
-                        from: 'users',
-                        localField: 'id_usuario_vendedor',
-                        foreignField: '_id',
-                        as: 'datos_usuario_vendedor'
-                    }
-                },
-                {
-                    $unwind: "$datos_usuario_vendedor"
-                },
-                {
-                    $lookup: {
-                        from: 'products',
-                        localField: 'id_producto',
-                        foreignField: '_id',
-                        as: 'datos_producto'
-                    }
-                }
-            ]
-        )
-        res.status(200).json({messages});
-
-    }
-    catch(err){
-        res.status(500).json({message: err.message});
+        const comentario = await ComentarioRespuesta.create(req.body);
+        res.status(201).json(comentario);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
     }
 }
 
+// Controlador para obtener todos los comentarios de envío
+async function obtenerComentarioEnvio(req, res) {
+    const { idProducto } = req.params;
 
-const crearComentarioRespuesta = async (req, res) => {
-    try{
-        const answer = new ComentarioRespuesta(req.body);
-        await answer.save();
-        res.status(201).json(answer);
-    }catch(err){
-        res.status(400).json({message: err.message});
-    }
-    
-}
-
-const obtenerComentarioRespuesta = async (req, res) => {
     try {
-        const answers = await ComentarioRespuesta.aggregate(
-            [
-                {
-                    $lookup: {
-                        from: 'conversacionenvios',
-                        localField: 'id_conversacionEnvio',
-                        foreignField: '_id',
-                        as: 'datos_conversacionEnvio'
-                    }
-                },
-                {
-                    $unwind: "$datos_conversacionEnvio" 
-                },
-                {
-                    $lookup: {
-                        from: 'users',
-                        localField: 'datos_conversacionEnvio.id_usuario_mensaje',
-                        foreignField: '_id',
-                        as: 'datos_comprador_mensaje'
-                    }
-                },
-                {
-                    $unwind: "$datos_comprador_mensaje"
-                },
-                {
-                    $lookup: {
-                        from: 'users',
-                        localField: 'datos_conversacionEnvio.id_usuario_vendedor',
-                        foreignField: '_id',
-                        as: 'datos_vendedor_respuesta'
-                    }
-                },
-                {
-                    $unwind: "$datos_vendedor_respuesta"
-                },
-                {
-                    $lookup: {
-                        from: 'products',
-                        localField: 'datos_conversacionEnvio.id_producto',
-                        foreignField: '_id',
-                        as: 'datos_producto'
-                    }
-                }
-            ]
-        )
-        res.json(answers);
+        const comentarios = await ComentarioEnvio.find({ id_producto: idProducto }).populate('id_usuario_mensaje', 'nombre');
+        res.status(200).json(comentarios);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+
+
+
+// Controlador para obtener todos los comentarios de respuesta
+async function obtenerComentarioRespuesta(req, res) {
+    const {id_ComentarioEnvio} = req.params
+    try {
+        const comentarios = await ComentarioRespuesta.find({id_ComentarioEnvio: id_ComentarioEnvio}).populate('id_usuario_mensaje', 'nombre');
+        res.status(200).json(comentarios);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+// Controlador para obtener un comentario de envío por su ID
+async function obtenerComentarioEnvioId(req, res) {
+    try {
+        const comentario = await ComentarioEnvio.findById(req.params.id);
+        if (!comentario) {
+            res.status(404).json({ message: 'Comentario de envío no encontrado' });
+            return;
         }
-    catch(err){
-        res.status(500).json({message: err.message});
+        res.status(200).json(comentario);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
     }
 }
 
-const obtenerComentarioRespuestaId = async (req, res) => {
+// Controlador para obtener un comentario de respuesta por su ID
+async function obtenerComentarioRespuestaId(req, res) {
     try {
-        const id = req.params.id;
-        const answers = await ComentarioRespuesta.aggregate(
-            [
-                {
-                    $match: {
-                        _id: new mongoose.Types.ObjectId(id)
-                    }
-                },
-                {
-                    $lookup: {
-                        from: 'conversacionenvios',
-                        localField: 'id_conversacionEnvio',
-                        foreignField: '_id',
-                        as: 'datos_conversacionEnvio'
-                    }
-                },
-                {
-                    $unwind: "$datos_conversacionEnvio" 
-                },
-                {
-                    $lookup: {
-                        from: 'users',
-                        localField: 'datos_conversacionEnvio.id_usuario_mensaje',
-                        foreignField: '_id',
-                        as: 'datos_comprador_mensaje'
-                    }
-                },
-                {
-                    $unwind: "$datos_comprador_mensaje"
-                },
-                {
-                    $lookup: {
-                        from: 'users',
-                        localField: 'datos_conversacionEnvio.id_usuario_vendedor',
-                        foreignField: '_id',
-                        as: 'datos_vendedor_respuesta'
-                    }
-                },
-                {
-                    $unwind: "$datos_vendedor_respuesta"
-                },
-                {
-                    $lookup: {
-                        from: 'products',
-                        localField: 'datos_conversacionEnvio.id_producto',
-                        foreignField: '_id',
-                        as: 'datos_producto'
-                    }
-                }
-            ]
-        )
-        res.json(answers);
+        const comentario = await ComentarioRespuesta.findById(req.params.id);
+        if (!comentario) {
+            res.status(404).json({ message: 'Comentario de respuesta no encontrado' });
+            return;
         }
-    catch(err){
-        res.status(500).json({message: err.message});
+        res.status(200).json(comentario);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
     }
 }
 
-module.exports = { obtenerComentarioRespuestaId, obtenerComentarioRespuesta,  crearComentarioRespuesta, obtenerComentarioEnvioId, obtenerComentarioEnvio, crearComentarioEnvio}
+module.exports = {
+    crearComentarioEnvio,
+    crearComentarioRespuesta,
+    obtenerComentarioEnvio,
+    obtenerComentarioRespuesta,
+    obtenerComentarioEnvioId,
+    obtenerComentarioRespuestaId
+};

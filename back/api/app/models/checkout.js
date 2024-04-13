@@ -43,7 +43,7 @@ const CheckoutSchema = new Schema({
     transactionId: {
         type: Schema.Types.ObjectId,
         ref: 'Transaction',
-        required: true
+        required: false
     },
     shippingAddress: {
         type: String,

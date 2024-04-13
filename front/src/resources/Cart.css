@@ -1,0 +1,88 @@
+.contadorContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.contadorContainer button{
+    background-color: transparent;
+    border: none;
+    font-size: 1vw;
+
+}
+
+.contador2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 0%;
+    padding: 10px;
+    gap: 1vw;
+    background: #2AA0E9;
+    border-radius: 8px;
+    width: 50%;
+    height: 10%;
+    cursor: default;
+}
+
+.contador2 button{
+    padding: 5px;
+    cursor: pointer;
+}
+
+.CartContainerM {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan en múltiples líneas */
+    justify-content: center;
+    margin-top: 5vh;
+    margin-bottom: 15vh;
+    border-radius: 1.2vw;
+    background-color: #ffffff;
+    padding-top: 1vw;
+    padding-bottom: 4vw;
+    width: 90vw;
+}
+
+.mainnc{
+    display: flex;
+    justify-content: center;
+}
+
+.cartWijo{
+    background-color: #F5E895;
+    padding: 1vw;
+    border-radius: 1vw;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    font-size: 2vw;
+}
+
+.proceder_pagar2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5%;
+    padding: 10px;
+    gap: 2vw;
+    background: #18A82F;
+    border-radius: 1.2vw;
+    width: 80vw;
+    cursor: pointer;
+    font-size: 2vw;
+    font-weight: bolder;
+}
+
+.noP{
+    width: 80vw;
+    background-color: #6e6e6e27;
+    height: 5vw;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

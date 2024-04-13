@@ -1,0 +1,109 @@
+.Buscado{
+    margin-left: 4vw;
+    margin-top: 15vh;
+}
+
+span{
+    font-weight: 400;
+}
+
+.Searched-product-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan en múltiples líneas */
+    justify-content: center;
+}
+
+.Searched-product-item {
+    width: 80vw; 
+    height: 30vh;
+    margin-bottom: 20px;
+    margin-right: 20px; 
+    background-color: #D8ECFA;
+    border: 1px solid #D8ECFA;
+    align-content: center;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.Seacrhed-product-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Searched-product-image {
+    height: 30vh;
+    object-fit: cover; 
+}
+
+.Searched-cart-button {
+    display: none;
+    height: fit-content;
+    background-color: transparent;
+    border: none;
+    padding: 3%;
+    position: absolute;
+    cursor: pointer;
+    top: 5px; 
+    right: 5px; 
+}
+
+.Searched-product-item:hover .Searched-cart-button {
+    display: block;
+}
+
+.Searched-small-text {
+    font-size: 70%; /* Ajusta el tamaño del texto según tus preferencias */
+}
+.Searched-small-text2 {
+    font-size: 50%; /* Ajusta el tamaño del texto según tus preferencias */
+}
+
+.Searched-product-vendedor {
+    width: 100%;
+    margin-top: 2vh;
+    font-size: 100%;
+    font-weight: 300;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    text-overflow: ellipsis; /* Muestra "..." cuando el texto se corta */
+    white-space: nowrap; /* Evita el salto de línea */
+}
+
+.Searched-product-details {
+    padding: 3vh;
+    margin-left: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Searched-product-description {
+    font-size: 2.5vw;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    text-overflow: ellipsis; /* Muestra "..." cuando el texto se corta */
+    font-weight: 700;
+}
+
+/* Nombre del producto */
+.Searched-product-name {
+    font-size: 2vw;
+    font-weight: 500;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    text-overflow: ellipsis; /* Muestra "..." cuando el texto se corta */
+    margin-bottom: 10px;
+}
+
+.no-results{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+    color: white;
+    font-weight: 500;
+}

@@ -1,9 +1,8 @@
-// Login.jsx
 import React, { useState } from 'react';
 import { AiOutlineUser, AiOutlineLock, AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'; // Importar los íconos de React Icons
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import '../resources/login.css'; 
+import '../resources/login.css'; // Importar el archivo CSS
 
 const Login = ({ setToken }) => {
     const [correo, setCorreo] = useState('');
@@ -14,9 +13,16 @@ const Login = ({ setToken }) => {
     const handleLogin = async () => {
         try {
             const response = await axios.post('http://localhost:3000/api/login', { correo: correo.toLowerCase(), clave });
-            const { token } = response.data;
+            const { token, user } = response.data;
             setToken(token);
-            Cookies.set('token', token, { expires: 1 }); // Guardar el token en la cookie con una duración de 1 día
+            // Guardar los roles, nombre, apellido, id y toda la información del usuario en cookies por separado
+            Cookies.set('token', token, { expires: 1 });
+            Cookies.set('userId', user._id, { expires: 1 });
+            Cookies.set('nombre', user.nombre, { expires: 1 });
+            Cookies.set('apellido', user.apellido, { expires: 1 });
+            Cookies.set('roles', JSON.stringify(user.roles), { expires: 1 });
+            Cookies.set('direccion', user.direccion, { expires: 1 });
+            // Continuar guardando el resto de la información del usuario según sea necesario
         } catch (error) {
             setError(error.response.data.message);
         }
@@ -59,8 +65,8 @@ const Login = ({ setToken }) => {
                     <button className="login-button" onClick={handleLogin}>Iniciar Sesión</button>
                     {error && <p>{error}</p>}
                     <div className="links-container">
-                    <p><a href="/register">Registrate</a></p>
-                    <p><a href="/recuperar">Recuperar clave</a></p>
+                        <p><a href="/register">Registrate</a></p>
+                        <p><a href="/recuperar">Recuperar clave</a></p>
                     </div>
                 </div>
             </div>

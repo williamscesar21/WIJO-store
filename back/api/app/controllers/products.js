@@ -1,11 +1,12 @@
 const Product = require('../models/products');
+const StatisticsSeller = require('../models/StatisticsSeller');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 
 const obtenerProductos = async (req, res) => {
     try {
-        const productos = await Product.find();
+        const productos = await Product.find().limit();
 
         if (productos.length === 0) {
             return res.status(404).json({ message: 'No se encontraron productos' });
@@ -113,6 +114,12 @@ const crearProducto = async (req, res) => {
                 }] // Guardar el nombre de archivo y el tipo de contenido de la imagen
             });
 
+            await StatisticsSeller.findOneAndUpdate(
+                { id_vendedor: id_vendedor },
+                { $push: { products: producto._id } }, // Agrega el ID del producto al arreglo de productos del vendedor
+                { upsert: true } // Crea un nuevo documento de estadísticas si no existe para este vendedor
+            );
+
             // Enviar respuesta al cliente
             res.status(201).json({
                 message: 'Producto creado exitosamente',
@@ -177,6 +184,7 @@ const buscarProductosPorPalabraClave = async (req, res) => {
         const { palabraClave } = req.params;
         // Utiliza una expresión regular para buscar productos que contengan la palabra clave en su nombre, sin importar mayúsculas o minúsculas
         const productos = await Product.find({ nombre: { $regex: new RegExp(palabraClave, 'i') } });
+        //console.log('Buscado')
 
         if (productos.length === 0) {
             return res.status(404).json({ message: 'No se encontraron productos que coincidan con la palabra clave' });

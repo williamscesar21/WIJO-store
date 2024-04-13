@@ -1,6 +1,6 @@
 .pag-principal-container {
+    margin-top: 10vh;
     background-color: #2AA0E9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: 'Inter', sans-serif;
 }
 
@@ -19,3 +19,100 @@
     margin-left: 20px;
 }
 
+.Portada{
+    display: flex;
+    flex-direction: row;
+    height: 62vh;
+    padding: 3vw;
+    justify-content: space-around;
+    max-height: 33vw;
+}
+
+.PortadaL{
+    display: flex;
+    flex-direction: column;
+    width: 80vh;
+    gap: 3vh;
+    margin-left: 2vw;
+}
+.PortadaR{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2vw;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    background-color: #C7A9B5;
+    padding: 2vw;
+    border-radius: 2vw;
+    max-height: 30vw;
+}
+
+.imgPortada{
+    width: 20vw;
+}
+
+.tituloPortada{
+    font-size: 4vw;
+    font-weight: 800;
+    display: block;
+    width: 11ch;
+}
+
+.portadaSmalltext {
+    width: 35ch;
+    white-space: nowrap;
+    border-right: .2vw solid;
+    animation: typing 15s steps(80) infinite, blink .8s infinite step-end alternate;
+    overflow: hidden;
+    font-size: 2vw;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    25% {
+        width: 35ch;
+    }
+    50% {
+        width: 35ch;
+    }
+    75% {
+        width: 0;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+.principalP{
+    background-color: #ffeaea94;
+    margin-top: 2vw;
+    padding: 2vw;
+}
+
+.PoliticasContainer{
+    background-color: #fff;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 4vw;
+    top: 0;
+}
+
+.PoliticasContainer h2{
+    margin: 1vw;
+}
+
+.PoliticasContainer a{
+    color: #fc0000;
+}

@@ -58,6 +58,14 @@ const ProductSchema = new Schema({
             return this.envio + this.costo + this.iva; // Calcula el precio como el envio + el costo + el IVA
         }
     },
+    comision:{
+        type: Number,
+        required: true,
+        default: function() {
+            return parseFloat((this.precio * 0.05).toFixed(2));
+        }
+    }
+    ,
     id_vendedor:{
         type: String,
         required: true

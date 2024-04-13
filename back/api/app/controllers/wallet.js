@@ -31,11 +31,12 @@ const obtenerSaldo = async (req, res) => {
             res.status(404).send({ message: 'No existe la billetera' });
             return;
         }
-        res.status(200).send({ balance: wallet.balance });
+        res.status(200).send({ walletId: wallet._id, balance: wallet.balance }); // Agregar el ID de la billetera
     } catch (err) {
         res.status(500).send({ message: err.message });
     }
 };
+
 const obtenerTodasBilleteras = async (req, res) => {
     try {
         // Buscar todas las billeteras

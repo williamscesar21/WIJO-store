@@ -4,6 +4,8 @@ import Cookies from 'js-cookie';
 import { AiOutlineUser } from 'react-icons/ai'; 
 import cart from '../resources/carrito.png'; 
 import '../resources/ProductList.css'; 
+import Loading from './Loading';
+import Error from './Error';
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
@@ -46,17 +48,16 @@ const ProductList = () => {
     };
 
     const handleLoadLess = () => {
-        setShowingProducts(4);
+        setShowingProducts(prevCount => prevCount - 4);
     };
 
     return (
         <>
-            <h2>Product List</h2>
             <div className="product-list-container">
                 {loading ? (
-                    <p>Loading...</p>
+                    <><Loading/></>
                 ) : error ? (
-                    <p>{error}</p>
+                    <><Error message="Hubo un error al cargar los datos" link='/' nombrelink='Inicio'/></>
                 ) : (
                     <div>
                         <ul className="product-list">
@@ -68,7 +69,9 @@ const ProductList = () => {
                                     {product.images && (
                                         <div className="product-images">
                                             {product.images.map((image, index) => (
-                                                <img key={index} className="product-image" src={`http://localhost:3000/api/products/uploads/${image.fileName}`} alt={`Product ${index + 1}`} />
+                                                 <img onClick={()=>{
+                                                    window.location.replace(`/product/${product._id}`)
+                                                }} key={index} className="product-image" src={`http://localhost:3000/api/products/uploads/${image.fileName}`} alt={`Product ${index + 1}`} />
                                             ))}
                                         </div>
                                     )}

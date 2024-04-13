@@ -48,6 +48,25 @@ const crearUsuario = async (req, res)=>{
     }
 }
 
+const actualizarClave = async (req, res) =>{
+    try{
+        const { userId, clave } = req.body;
+
+        // Encontrar al usuario por su ID y actualizar su clave encriptada
+        const usuario = await UsersModel.findByIdAndUpdate(userId, { clave: await UsersModel.encryptPassword(clave) }, { new: true });
+
+        // Verificar si el usuario existe
+        if (!usuario) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+
+        res.status(200).json({ message: 'Clave actualizada exitosamente', usuario });
+    } catch(e){
+        res.status(500).json({ message: e.message });
+    }
+}
+
+
 const suspenderUsuarioPorId = async (req, res) => {
     try {
         const { id } = req.params;
@@ -108,4 +127,4 @@ const eliminarUsuarioPorId = async (req, res) => {
 
 
 
-module.exports = { obtenerusuarios, crearUsuario, suspenderUsuarioPorId, actualizarUsuarioPorId, eliminarUsuarioPorId };
+module.exports = { actualizarClave, obtenerusuarios, crearUsuario, suspenderUsuarioPorId, actualizarUsuarioPorId, eliminarUsuarioPorId };

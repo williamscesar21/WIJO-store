@@ -18,7 +18,6 @@ const login = async (req, res) => {
         // Comparar la contraseña
         const checkPassword = await UserModel.comparePassword(clave, user.clave);
 
-
         // Validar si la contraseña es válida
         if (!checkPassword) {
             return res.status(400).json({ message: "Contraseña incorrecta" });
@@ -27,8 +26,8 @@ const login = async (req, res) => {
         // Creamos el token de acceso
         const token = jwt.sign({ id: user._id }, process.env.DB_KEY, { expiresIn: '1m' });
 
-        // Enviamos el token de acceso en el encabezado de autorización
-        res.header('authorization', token).json({ token: token });
+        // Enviamos el token de acceso y los datos del usuario en la respuesta
+        res.json({ token: token, user: user });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

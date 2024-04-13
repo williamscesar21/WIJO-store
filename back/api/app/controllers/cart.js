@@ -11,14 +11,14 @@ const agregarProductoAlCarrito = async (req, res) => {
             return res.status(404).json({ message: 'Producto no encontrado' });
         }
 
-        // Calcular el precio del producto
-        const price = product.precio;
+        
+        const price = product.precio; 
 
-        // Buscar el carrito del usuario
+        
         let cart = await CartItem.findOne({ user: userId });
 
         if (cart) {
-            // Si el usuario ya tiene un carrito, agregar el producto al carrito existente
+            // Si el usuario ya tiene un carrito, verificar si el producto ya está en el carrito
             const existingItemIndex = cart.items.findIndex(item => item.product.equals(productId));
 
             if (existingItemIndex !== -1) {
@@ -56,10 +56,17 @@ const verCarritoDeUsuario = async (req, res) => {
         const userId = req.params.userId;
 
         // Buscar el carrito del usuario
-        const cart = await CartItem.findOne({ user: userId }).populate('items.product');
+        let cart = await CartItem.findOne({ user: userId }).populate('items.product');
 
-        if (!cart || !cart.items || cart.items.length === 0) {
-            return res.status(404).json({ message: 'No se encontraron elementos en el carrito' });
+        // Si no se encuentra un carrito para el usuario, crear uno nuevo
+        if (!cart) {
+            cart = new CartItem({
+                user: userId,
+                items: [],
+                total: 0
+            });
+            await cart.save();
+            return res.status(200).json({ message: 'Carrito creado para el usuario', itemsCarrito: [], total: 0 });
         }
 
         res.status(200).json({ message: 'Elementos encontrados en el carrito', itemsCarrito: cart.items, total: cart.total });
@@ -68,6 +75,7 @@ const verCarritoDeUsuario = async (req, res) => {
         res.status(500).json({ message: 'Error al ver el carrito de usuario', error: error.message });
     }
 }
+
 
 const borrarProductoDelCarrito = async (req, res) => {
     try {
@@ -108,8 +116,54 @@ const borrarProductoDelCarrito = async (req, res) => {
     }
 }
 
+const actualizarCantidadProductoEnCarrito = async (req, res) => {
+    try {
+        const { userId, productId } = req.params;
+        const { quantity } = req.body;
+
+        // Buscar el carrito del usuario
+        let cart = await CartItem.findOne({ user: userId });
+
+        if (!cart) {
+            return res.status(404).json({ message: 'Carrito no encontrado' });
+        }
+
+        // Encontrar el índice del producto en el carrito
+        const productIndex = cart.items.findIndex(item => item.product.equals(productId));
+
+        if (productIndex === -1) {
+            return res.status(404).json({ message: 'Producto no encontrado en el carrito' });
+        }
+
+        // Obtener el precio del producto antes de actualizar la cantidad
+        const price = cart.items[productIndex].price;
+
+        // Actualizar la cantidad del producto en el carrito
+        cart.items[productIndex].quantity = quantity;
+
+        // Calcular el nuevo total del carrito
+        const updatedTotal = cart.items.reduce((total, item) => {
+            return total + (item.price * item.quantity);
+        }, 0);
+
+        // Actualizar el total del carrito
+        cart.total = updatedTotal;
+
+        // Guardar el carrito actualizado en la base de datos
+        await cart.save();
+
+        res.status(200).json({ message: 'Cantidad del producto en el carrito actualizada exitosamente', updatedTotal });
+    } catch (error) {
+        console.error('Error al actualizar la cantidad del producto en el carrito:', error);
+        res.status(500).json({ message: 'Error al actualizar la cantidad del producto en el carrito', error: error.message });
+    }
+}
+
+
+
 
 module.exports = {
+    actualizarCantidadProductoEnCarrito,
     borrarProductoDelCarrito,
     verCarritoDeUsuario,
     agregarProductoAlCarrito

@@ -1,0 +1,30 @@
+.ErrorBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.error-container {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.error-title {
+    color: #721c24;
+}
+
+.error-message {
+    color: #721c24;
+}
+
+.ErrorLink{
+    color: #ff0019;
+    text-decoration: underline;
+    padding: 2vh;
+}
+

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { AiOutlineUser, AiOutlineLock } from 'react-icons/ai'; 
+import { AiOutlineUser, AiOutlineLock } from 'react-icons/ai'; // Importar los íconos de React Icons
 import axios from 'axios';
-import '../resources/register.css'; 
+import '../resources/register.css'; // Importar el archivo CSS
 
 const Register = () => {
     const [nombre, setNombre] = useState('');
@@ -122,7 +122,7 @@ const Register = () => {
         </div>
         <button class="register-button" onClick={handleRegister}>Registrarse</button>
         {error && <p>{error}</p>}
-        <a href="/">¿Ya tienes cuenta? Inicia Sesión</a>
+        <a href="/">Iniciar Sesión</a>
     </div>
 </div>
     );

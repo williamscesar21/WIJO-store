@@ -1,0 +1,261 @@
+.producto-main{
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.containerp{
+    width: 95vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    border-radius: 1vw;
+    margin-bottom: 3vh;
+}
+
+.producto-content{
+    width: 95vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1vw 1vw 0px 0px;
+    justify-content: space-around;
+}
+
+.producto-details{
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
+
+.left{
+    width: 8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.middle{
+    width: 40vw;
+}
+.right{
+    width: 38vw;
+}
+
+.product-imageV{
+    margin-top: 5vh;
+    width: 7vw;
+    border-radius: 1vw;
+    border: 2px solid #18A82F;
+}
+.product-imageG{
+    margin-top: 5vh;
+    width: 38vw;
+    border-radius: 1vw;
+}
+
+.ProductInfo{
+    margin-top: 5vh;
+}
+
+.productTitle{
+    font-size: 3vw;
+    margin: 0;
+}
+
+.calificacion{
+    font-weight: 300;
+}
+
+.product-descriptionG {
+    margin-top: 5vh;
+    font-size: 5vw;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    text-overflow: ellipsis; /* Muestra "..." cuando el texto se corta */
+    font-weight: 700;
+}
+
+.small-textG {
+    font-size: 2vw; /* Ajusta el tamaño del texto según tus preferencias */
+}
+
+.product-vendedorG{
+    font-size: 1.3vw;
+    margin-top: 1vh;
+}
+
+.contador {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5%;
+    padding: 10px;
+    gap: 2vw;
+    background: #2AA0E9;
+    border-radius: 15px;
+    width: 50%;
+}
+
+
+.contador-btn{
+    cursor: pointer;
+}
+
+.contador-btn, .contador-value{
+    font-weight: bolder;
+    font-size: 2vw;
+}
+
+.dispon{
+    margin-top: 10px;
+    font-size: 1.3vw;
+}
+
+.proceder_pagar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5%;
+    padding: 10px;
+    gap: 2vw;
+    background: #18A82F;
+    border-radius: 1.2vw;
+    width: 100%;
+    cursor: pointer;
+    font-size: 2vw;
+    font-weight: bolder;
+}
+.mensajear {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5%;
+    padding: 10px;
+    gap: 2vw;
+    background: #FF7F00;
+    border-radius: 1.2vw;
+    width: 100%;
+    cursor: pointer;
+    font-size: 2vw;
+    font-weight: 600;
+}
+
+.descripcionP{
+    min-height: 20vh;
+    margin-top: 3vh;
+}
+
+.descripcionContainer{
+    min-height: 30vh;
+    width: 88vw;
+    border-radius: 1.2vw;
+    background-color: #EBEBEB;
+    padding: 2vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.comentariosContainer{
+    min-height: 30vh;
+    width: 88vw;
+    border-radius: 1.2vw;
+    background-color: #ffffff;
+    padding: 2vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.comentario{
+    min-height: 7vh;
+    width: 84vw;
+    border-radius: 1vw;
+    background-color: #EBEBEB;
+    margin-bottom: 2vh;
+    padding: 2vw;
+    margin-left: 0;
+}
+.respuesta{
+    min-height: 5vh;
+    width: 75vw;
+    border-radius: 1vw;
+    background-color: #a4a4a478;
+    padding: 1vw;
+    margin-left: 2vw;
+    margin-top: 3vh ;
+}
+.Acomentario{
+    min-height: 7vh;
+    width: 80vw;
+    border-radius: 1vw;
+    background-color: #EBEBEB;
+    margin-bottom: 2vh;
+    padding: 2vw;
+    margin-left: 0;
+    border: 2px solid #2e2e2e;
+}
+.Rcomentario{
+    min-height: 1vh;
+    width: 70vw;
+    border-radius: 0.5vw;
+    background-color: #EBEBEB;
+    margin-bottom: 2vh;
+    padding: 0.5vw;
+    margin-left: 0;
+    border: 1px solid #adadad;
+}
+
+.Rcomentario:active{
+    border: 1px solid #2e2e2e;
+}
+
+.comText{
+    margin-left: 2vw;
+    margin-top: 1vw;
+}
+
+.comentador{
+    color: #525252;
+    margin-bottom: 1vh;
+}
+
+.publicar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 2vw;
+    background: #2AA0E9;
+    border-radius: 15px;
+    width: 30%;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+.Rpublicar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 2vw;
+    background: #2AA0E9;
+    border-radius: 10px;
+    width: 10%;
+    max-height: 5vh;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9vw;
+}
+
+.RcomentarioContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}

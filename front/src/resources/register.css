@@ -5,14 +5,20 @@
 }
 
 .register-container {
-    padding: 3%;
+    padding: 1%;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #8ac1ff;
+    background-color: #2e2c2ca2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50vh;
+    margin-left: -50%; 
+    z-index: 100;
 }
 
 .Rtitle-container {
@@ -84,11 +90,13 @@ label {
     margin-top: 5%;
 }
 
-a {
+.Rform-container a{
     text-decoration: none;
     font-family: 'Inter', sans-serif;
+    font-style: normal;
     font-weight: 300;
     font-size: 100%;
+    color: #091233;
 }
 
 .Rp{

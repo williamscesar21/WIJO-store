@@ -21,10 +21,15 @@ const registrarTransaccion = async (userId, amount, type) => {
 
         // Guardar la billetera con la nueva transacción
         await wallet.save();
+
+        // Retornar el ID de la transacción generada
+        return transaction._id;
+
     } catch (error) {
         throw new Error('Error al registrar la transacción: ' + error.message);
     }
 };
+
 
 const obtenerIdVendedor = async (productId) => {
     try {
@@ -40,7 +45,7 @@ const obtenerIdVendedor = async (productId) => {
 
 const comprarProducto = async (req, res) => {
     try {
-        const { userId, productId, quantity, shippingMethod, operationId, transactionId, shippingAddress, extraNote, shippingCompany } = req.body;
+        const { userId, productId, quantity, shippingMethod, operationId, shippingAddress, extraNote, shippingCompany } = req.body;
 
         // Obtener el ID del vendedor
         const sellerId = await obtenerIdVendedor(productId);
@@ -89,8 +94,8 @@ const comprarProducto = async (req, res) => {
         vendedorWallet.balance += totalAmount;
         await vendedorWallet.save();
 
-        // Registrar la transacción en la billetera del vendedor
-        await registrarTransaccion(sellerId, totalAmount, 'sell');
+        // Registrar la transacción en la billetera del vendedor y obtener el ID de la transacción generada
+        const transactionGenerated = await registrarTransaccion(sellerId, totalAmount, 'sell');
 
         // Restar el saldo de la billetera del comprador
         compradorWallet.balance -= totalAmount;
@@ -105,7 +110,7 @@ const comprarProducto = async (req, res) => {
             seller: sellerId,
             buyer: userId,
             operationId,
-            transactionId,
+            transactionId: transactionGenerated, // Aquí se pasa el ID de la transacción generada
             shippingAddress,
             extraNote,
             shippingCompany,
@@ -126,6 +131,7 @@ const comprarProducto = async (req, res) => {
         res.status(500).json({ message: 'Error al realizar la compra', error: error.message });
     }
 };
+
 
 
 

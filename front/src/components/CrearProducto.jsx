@@ -19,7 +19,6 @@ const CrearProducto = () => {
     const handleCrearProducto = async () => {
         try {
             const id_vendedor = Cookies.get('userId');
-            //nombre y apellido en un solo string
             const nombre_vendedor = Cookies.get('nombre') + ' ' + Cookies.get('apellido');
             const formData = new FormData(); // Crear un objeto FormData para enviar la imagen
             formData.append('nombre', nombre);
@@ -147,7 +146,7 @@ const CrearProducto = () => {
             </div>
         <button className="CrearProducto-button" onClick={handleCrearProducto}>Crear producto</button>
         {error && <p>{error}</p>}
-        <a className="Cancelar-button" href="/">Cancelar</a>
+        <a className="Cancelar-button" onClick={()=>{window.location.reload()}} href="">Cancelar</a>
     </div>
 </div>
     );

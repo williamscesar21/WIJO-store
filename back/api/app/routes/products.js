@@ -16,6 +16,6 @@ router.delete('/:id', productController.eliminarProductoPorId);
 router.get('/buscar/:palabraClave', productController.buscarProductosPorPalabraClave);
 
 // Ruta para servir imágenes estáticas desde la carpeta de uploads
-router.use('/uploads', express.static('../back/api/app/uploads'));
+router.use('/uploads', express.static('../node/api/app/uploads'));
 
 module.exports = router;
