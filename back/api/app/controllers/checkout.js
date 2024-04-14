@@ -116,7 +116,7 @@ const comprarProducto = async (req, res) => {
             shippingCompany,
             productName: producto.nombre,
             productPrice: producto.precio,
-            sellerName: vendedor.nombre // Suponiendo que el nombre del vendedor está en el modelo de usuario
+            sellerName: vendedor.nombre
         });
 
         // Guardar el checkout en la base de datos

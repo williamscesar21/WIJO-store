@@ -37,7 +37,7 @@ const crearUsuario = async (req, res)=>{
 
        const wallet = await Wallet.create({
         owner: user._id, // Aquí se usa el ID del usuario recién creado como propietario de la billetera
-        balance: 0 // Puedes establecer un saldo inicial si lo deseas
+        balance: 0 // Puedes establecer un saldo inicial 
    });
 
         res.status(200).json({messgae: 'Usuario creado exitosamente', user});

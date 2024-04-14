@@ -124,4 +124,4 @@ UsersSchema.statics.encryptPassword = async (clave) => {
     return bcrypt.hash(clave, salt);
 }
 
-module.exports = mongoose.model('Users', UsersSchema); //Exportación del módulo usuario
+module.exports = mongoose.model('Users', UsersSchema);

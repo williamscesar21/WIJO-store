@@ -29,7 +29,7 @@ const CartSchema = new Schema({
     total: {
         type: Number,
         required: true,
-        default: 0 // Establecer el valor predeterminado del total como 0
+        default: 0 
     }
 }, {
     timestamps: true,

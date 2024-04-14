@@ -29,3 +29,6 @@ const upload = multer({
 
 module.exports = upload;
 */
+
+
+//ESTO FUE INUTILIZADO YA QUE SE USARON LAS FUNCIONES EN controllers/products.js

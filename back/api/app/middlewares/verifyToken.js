@@ -25,7 +25,5 @@ const verifyToken = async (req,res,next)=>{
 
 module.exports = { verifyToken }
 
-// Crear un middleware para verificar rol de usuario
-// Por ejemplo que en una ruta se pueda acceder si la persona es administrador
 
 
