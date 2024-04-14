@@ -22,7 +22,7 @@ const Login = ({ setToken }) => {
             Cookies.set('apellido', user.apellido, { expires: 1 });
             Cookies.set('roles', JSON.stringify(user.roles), { expires: 1 });
             Cookies.set('direccion', user.direccion, { expires: 1 });
-            // Continuar guardando el resto de la información del usuario según sea necesario
+            
         } catch (error) {
             setError(error.response.data.message);
         }

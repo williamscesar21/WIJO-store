@@ -130,7 +130,7 @@ const StatisticsSeller = () => {
                             </ul>
 
                         </div>
-                        {roles.includes('vendedor') && ( // Verifica si el array de roles incluye 'vendedor'
+                        {roles.includes('vendedor') && ( 
                             <div className='statsInfo'>
                                 <p className='statInfo'>Productos en stock: <b>{statistics.products.length}</b></p>
                                 <p className='statInfo'>Ventas totales: <b>{statistics.ventas_totales}</b></p>

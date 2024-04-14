@@ -40,7 +40,7 @@ const Checkout = () => {
                 shippingCompany: shippingCompany,
                 shippingAddress: shippingAddress
             });
-            // Aquí podrías redireccionar al usuario a una página de confirmación o hacer alguna otra acción luego de completar la compra
+            
         } catch (error) {
             setError(error.response.data.message);
         }
@@ -56,7 +56,7 @@ const Checkout = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Aquí podrías realizar alguna validación adicional antes de enviar los datos del formulario
+        
         handleCheckout();
     };
 

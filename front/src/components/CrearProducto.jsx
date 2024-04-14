@@ -31,7 +31,7 @@ const CrearProducto = () => {
             formData.append('nombre_vendedor', nombre_vendedor);
             formData.append('estado_producto', estado_producto);
             formData.append('id_categoria', id_categoria);
-            formData.append('images', images); // Agregar la imagen al FormData
+            formData.append('images', images); 
 
             const response = await axios.post('http://localhost:3000/api/products', formData, {
                 headers: {
